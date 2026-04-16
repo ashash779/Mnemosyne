@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Sans:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-green-deep: #3d6b4f;
+  --color-green-mid: #5c8f6e;
+  --color-green-light: #7db88a;
+  --color-green-pale: #b5d5c5;
+  --color-beige-dark: #d4c4a8;
+  --color-beige-mid: #e8dcc8;
+  --color-beige-light: #f5f0e8;
+  --color-cream: #fdfaf4;
+
+  --font-fraunces: 'Fraunces', Georgia, serif;
+  --font-dm-sans: 'DM Sans', system-ui, sans-serif;
+}
+
+:root {
+  --color-green-deep: #3d6b4f;
+  --color-green-mid: #5c8f6e;
+  --color-green-light: #7db88a;
+  --color-green-pale: #b5d5c5;
+  --color-beige-dark: #d4c4a8;
+  --color-beige-mid: #e8dcc8;
+  --color-beige-light: #f5f0e8;
+  --color-cream: #fdfaf4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-green-deep);
+  min-height: 100vh;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeBlend in='SourceGraphic' mode='multiply'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 700;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-green-mid);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-beige-light);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-green-pale);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-green-mid);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes leafFloat {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+  50% { transform: translateY(-20px) rotate(10deg); opacity: 0.9; }
+  100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+}
+
+@keyframes confettiFall {
+  0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes orangeDrop {
+  0% { transform: translateY(-20px) scale(0); opacity: 0; }
+  60% { transform: translateY(4px) scale(1.1); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.4); opacity: 0.3; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ── Skeleton loader ───────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--color-beige-mid) 25%, var(--color-beige-light) 50%, var(--color-beige-mid) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 0.5rem;
+}
+
+/* ── Button base resets / hover helpers ─────────────────── */
+button:not([disabled]):hover {
+  filter: brightness(0.96);
+}
+button:not([disabled]):active {
+  filter: brightness(0.92);
+}
+
+/* ── Mobile responsive ──────────────────────────────────── */
+@media (max-width: 639px) {
+  /* Shelly widget — compact */
+  .shelly-widget {
+    bottom: 1rem !important;
+    right: 1rem !important;
+  }
+  .shelly-widget .widget-card {
+    padding: 0.5rem 0.75rem !important;
+  }
+
+  /* Diagram info panel — full width slide from bottom */
+  .diagram-info-panel {
+    top: auto !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 70vh;
+    border-radius: 1.25rem 1.25rem 0 0 !important;
+    border-left: none !important;
+    border-top: 2px solid var(--color-beige-dark) !important;
+  }
+
+  /* Prevent body scroll behind modal panels */
+  body.panel-open {
+    overflow: hidden;
+  }
+}
+
+/* ── Focus ring visibility enhancement ─────────────────── */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+[role="tab"]:focus-visible {
+  outline: 3px solid var(--color-green-mid);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Reduced motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

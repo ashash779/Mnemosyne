@@ -1,0 +1,78 @@
+export const learnerProfiles = {
+  visual: {
+    id: 'visual',
+    name: 'Visual Learner',
+    emoji: '👁️',
+    color: '#e8f5ee',
+    border: '#7db88a',
+    description:
+      "You learn best when information is presented as images, diagrams, charts, or colour-coded notes. Your brain naturally builds mental pictures to organise ideas, which makes you great at spotting patterns and relationships at a glance.",
+    techniques: [
+      "Draw cell diagrams from memory after reading — then compare to the textbook",
+      "Colour-code your notes by body system (e.g. green for circulatory, blue for nervous)",
+      "Use mind maps to connect biological concepts visually",
+      "Watch labelled animations of processes like mitosis or digestion",
+      "Create flashcards with diagrams instead of just words",
+      "Use the Mnemosyne interactive diagrams to build mental models",
+      "Sketch flowcharts for processes like photosynthesis or the cardiac cycle",
+      "Re-draw diagrams from scratch as a revision technique",
+    ],
+  },
+  auditory: {
+    id: 'auditory',
+    name: 'Auditory Learner',
+    emoji: '🎧',
+    color: '#f0f5f2',
+    border: '#b5d5c5',
+    description:
+      "You absorb information best through listening and speaking. Hearing explanations, discussing ideas out loud, and even the rhythm of language helps concepts click for you. You probably remember things better after talking them through.",
+    techniques: [
+      "Read your biology notes out loud when reviewing — your own voice helps it stick",
+      "Explain concepts to a friend, pet, or even yourself in the mirror",
+      "Record yourself summarising a lesson and play it back",
+      "Listen to biology podcasts or YouTube explainers as a supplement",
+      "Join or form a study group where you can talk through material",
+      "Use mnemonics and rhymes to remember sequences (e.g. taxonomy order)",
+      "Ask your teacher to explain diagrams verbally while you listen",
+      "Talk through what's happening step-by-step when doing lab work",
+    ],
+  },
+  reading: {
+    id: 'reading',
+    name: 'Reading/Writing Learner',
+    emoji: '📝',
+    color: '#fdf5e8',
+    border: '#d4c4a8',
+    description:
+      "Written words are your superpower. You retain information best when you read it carefully and express it in writing. Taking notes, making lists, and rewriting concepts in your own words all help cement your understanding.",
+    techniques: [
+      "Rewrite textbook sections in your own words after reading",
+      "Make glossaries of key biology terms with your own definitions",
+      "Write short essays explaining processes like photosynthesis or cell division",
+      "Use bullet-point summaries after each lesson or section",
+      "Create numbered lists for multi-step processes (e.g. the stages of mitosis)",
+      "Annotate diagrams with detailed written labels and explanations",
+      "Keep a biology journal where you note interesting facts and questions",
+      "Read multiple sources on the same topic and compare perspectives",
+    ],
+  },
+  kinesthetic: {
+    id: 'kinesthetic',
+    name: 'Kinesthetic Learner',
+    emoji: '🤲',
+    color: '#f5f0e8',
+    border: '#d4c4a8',
+    description:
+      "You learn through doing, touching, and experiencing. Abstract concepts become real for you when you can connect them to physical actions or real-world examples. Lab work, experiments, and hands-on activities are where you shine.",
+    techniques: [
+      "Use physical models — build a cell from clay or household objects",
+      "Act out biological processes: be the ribosome, be the enzyme",
+      "Do every available lab and practical exercise — these are made for you",
+      "Take breaks every 25 minutes to move around and reset focus",
+      "Associate biology concepts with everyday physical sensations or experiences",
+      "Use the Mnemosyne interactive diagrams — clicking and exploring suits your style",
+      "Make 3D timelines or concept maps you can physically rearrange",
+      "Connect what you learn to real examples: diseases, sports injuries, food science",
+    ],
+  },
+}
